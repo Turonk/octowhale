@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Подписки{% endblock %}
+{% block header %}Подиски{% endblock %}
+{% block content %}
+
+    <div class="container">
+
+        {% include "menu.html" %}
+
+        {% for post in page %}
+
+            {% include "posts/post_item.html" with post=post %}
+
+        {% empty %}
+
+            <h1>У вас пока нет подписок</h1>
+
+        {% endfor %}
+
+    </div>
+
+        {% if page.has_other_pages %}
+
+            {% include "paginator.html" with items=page %}
+
+        {% endif %}
+
+{% endblock %}

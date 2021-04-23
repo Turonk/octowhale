@@ -1,0 +1,80 @@
+<!-- templates/about/author.html -->
+{% extends "base.html" %}
+{% block title %}Об авторе проекта{% endblock %}
+{% block content %}
+{% load user_filters %}
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-3 mb-3 mt-1">
+        <div class="card">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="h5">
+                  Что я использовал
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="h6 text-muted">
+                  <p>
+                    <a target="_blank" href="https://www.djangoproject.com">Django</a>
+                  </p>
+                  <p>
+                    <a target="_blank" href="https://docs.djangoproject.com/en/3.1/topics/testing/">Unittest</a>
+                  </p>
+                  <p>
+                    <a target="_blank" href="https://pypi.org/project/coverage/">Coverage</a>
+                  </p>
+                  <p>
+                    <a target="_blank" href="https://getbootstrap.com">Bootstrap</a>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="card-body">
+          <div class="card-text">
+            <p>
+
+              <h4>Django</h4>
+              <p>
+              Весь сайт работает на фреймворке Django версии 2.2.6.<br>
+              База данных SQLite была оставлена по умолчанию, как и движки аутентификации.
+              Есть паджинатор(по страничкам, как в 2000-ые, потому в ленту я пока не умею) и
+              маленький собственный контекстный процессор, но это так.
+              </p>
+
+              <h4>Unittest</h4>
+              <p>
+              Тестировщик здесь страндартный от Django, потому что в нём есть полезные расширения для
+              собственных классов и механизмов. А так, это самый простой Unittest из pip-а практичски.
+              Тестами покрыты вью-функции, контексты, формы, роутинг по правам доступа и шаблоны (дабы
+              снизить уровень хардкода, всё подключено через пространство имён, чтобы не трогать шаблоны
+              и html-теги при смене URLов).
+              </p>
+
+              <h4>Coverage</h4>
+              <p>
+              По результатам прогона Coverage, покрытие составило 96%, однако это просто карсивая цифра,
+              так как он проанализировал пустые файлы на которые тесты писать не надо было. Сам же я примерно
+              оцениваю покрытие в 80%. Не проверялось то, что итак должно работать благодаря Django, и то, что
+              не особо сказывается на функциональности. На данный момент проект проверяется 21 тестом.
+              </p>
+
+              <h4>Bootstrap</h4>
+              <p>
+              Весь фронтэнд сделан с помощью готовых решений Bootstrap и модифицирован под нужды проекта. Под
+              "модифицирован" я подразумеваю вставку тегов Django для рендера страниц и подключение ссылок через
+              вышеупомянутое пространство имён, чтобы не лазить в шаблоны лишний раз.
+              </p>
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

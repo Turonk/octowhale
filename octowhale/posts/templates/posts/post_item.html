@@ -1,0 +1,57 @@
+<div class="card mb-3 mt-1 shadow-sm">
+
+
+
+    <div class="row">
+        <div class="col-6 col-12-small">
+            <section class="box">
+              <a href="#" class="image featured"><img src="static/images/pic08.jpg" alt="" /></a>
+              <header>
+                  <h3>Magna tempus consequat</h3>
+                  <p>{{ post.pub_date }}</p>
+                <a href="#">
+                  <strong class="d-block text-gray-dark">@{{ post.author }}</strong></a>
+              </header>
+              <p>{{ post.text|linebreaksbr }}</p>
+              <footer>
+                  <ul class="actions">
+                      <li><a href="#" class="button icon solid fa-file-alt">Редактировать</a></li>
+                      <li><a href="#" class="button alt icon solid fa-comment">Коментарии ({{ post.comments.count }})</a></li>
+                  </ul>
+              </footer>
+    <p class="card-text">
+    <a href="#">
+      <strong class="d-block text-gray-dark">@{{ post.author }}</strong></a>
+
+    {% if post.group %}
+    <a href="#">
+      <strong class="d-block text-gray-dark">{{ post.group }}</strong></a>
+    {% endif %}
+
+      <p>{{ post.text|linebreaksbr }}</p>
+
+    </p>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group ">
+        {% if post.comments.exists %}
+        <a class="btn btn-sm text-muted" href="#"
+           role="button">Коментарии ({{ post.comments.count }}) </a>
+        {% else %}
+        <a class="btn btn-sm text-muted" href="#"
+           role="button">Коментировать первым!</a>
+        {% endif %}
+      {% if post.author.username == user.username %}
+        <a class="btn btn-sm text-muted" href="#"
+           role="button">Редактировать</a>
+        <a class="btn btn-sm text-muted" href="#"
+           role="button">Удалить</a>
+      {% endif %}
+
+      </div>
+      <small class="text-muted"></small>
+    </div>
+            </section>
+        </div>
+  </div>
+</div>
