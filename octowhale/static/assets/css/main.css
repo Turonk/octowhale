@@ -2173,7 +2173,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background: #CCE8F4 url("images/pic01.jpg");
+		background: #CCE8F4 url("../../images/pic01.jpg");
 		background-position: center center;
 		background-size: auto 100%;
 		background-repeat: no-repeat;
@@ -2421,7 +2421,7 @@ input, select, textarea {
 		/* Main */
 
 			#main {
-				padding: 30px 0;
+				padding: 10px 0;
 			}
 
 		/* Footer */
@@ -2528,7 +2528,7 @@ input, select, textarea {
 		/* Main */
 
 			#main {
-				padding: 40px 0;
+				padding: 10px 0;
 			}
 
 		/* Copyright */

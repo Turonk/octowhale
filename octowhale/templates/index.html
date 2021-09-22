@@ -3,34 +3,24 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-
+{% include "banner.html" %}
 <div class="col-12">
 
     <!-- Blog -->
         <section>
             <header class="major">
-                <h2>The Blog</h2>
+                <h2>Последние новости</h2>
             </header>
-        <div class="container">
+            <div class="container">
+                <div class="row">
+                    {% for post in posts %}
+                        <div class="col-6 col-12-small">
+                            {% include "posts/post_item.html" with posts=posts %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
 
-            {% load cache %}
-            {% cache 20  index_page %}
-
-
-            {% for post in page %}
-
-                {% include "posts/post_item.html" with post=post %}
-
-            {% endfor %}
-
-            {% endcache %}
-        </div>
-
-            {% if page.has_other_pages %}
-
-                {% include "paginator.html" with items=page %}
-
-            {% endif %}
         </section>
 </div>
 

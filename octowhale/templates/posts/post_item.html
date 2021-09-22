@@ -1,0 +1,33 @@
+
+    <section class="box">
+      <a href="#" class="image featured"><img src="../static/images/pic08.jpg" alt="" /></a>
+      <header>
+          <h3>{{ post.post_title }}</h3>
+          <p>{{ post.pub_date }}</p>
+        <a href="#">
+          <strong class="d-block text-gray-dark">@{{ post.author }}</strong></a>
+        {% if post.group %}
+          <a href="#">
+              <strong class="d-block text-gray-dark">{{ post.group }}</strong></a>
+        {% endif %}
+      </header>
+       {% if posts %}
+            <p>{{ post.text|linebreaksbr|slice:":50" }}...</p>
+        {% else %}
+             <p>{{ post.text|linebreaksbr}}</p>
+        {% endif %}
+      <footer>
+        <ul class="actions">
+            <li><a href="{% url 'posts:detail' post.pk %}" class="button icon solid fa-file-alt">Подробнее</a></li>
+            <li><a href="#" class="button alt icon solid fa-comment">Коментарии ({{ post.comments.count }})</a></li>
+            {% if post.author.username == user.username %}
+              <ul class="links">
+                <li><a href="{% url 'posts:edit' post.pk %}">Редактировать</a></li>
+                <li><a href="{% url 'posts:delete' post.pk %}">Удалить</a></li>
+              </ul>
+            {% endif %}
+        </ul>
+      </footer>
+  </section>
+
+

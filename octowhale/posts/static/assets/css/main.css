@@ -2267,7 +2267,7 @@ input, select, textarea {
 	#main {
 		position: relative;
 		background: #f7f7f7 url("images/bg02.png");
-		padding: 4em 0 4em 0;
+		padding: 1em 0 4em 0;
 	}
 
 		#main:before {
@@ -2421,7 +2421,7 @@ input, select, textarea {
 		/* Main */
 
 			#main {
-				padding: 30px 0;
+				padding: 10px 0;
 			}
 
 		/* Footer */
@@ -2528,7 +2528,7 @@ input, select, textarea {
 		/* Main */
 
 			#main {
-				padding: 40px 0;
+				padding: 10px 0;
 			}
 
 		/* Copyright */

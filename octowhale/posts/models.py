@@ -29,6 +29,12 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-pub_date']
+    
+    post_title = models.CharField(
+        verbose_name='Заголовок поста',
+        max_length=50,
+        help_text='Введите заголовок поста'
+    )
 
     text = models.TextField(
         verbose_name='Текст',
@@ -53,11 +59,11 @@ class Post(models.Model):
         null=True,
         related_name='posts')
 
-    # image = models.ImageField(
-    #     verbose_name='Картинка',
-    #     upload_to='posts/',
-    #     blank=True,
-    #     null=True)
+    image = models.ImageField(
+        verbose_name='Картинка',
+        upload_to='posts/',
+        blank=True,
+        null=True)
 
     def __str__(self):
         return self.text[:15]
